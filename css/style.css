@@ -1,0 +1,50 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    letter-spacing: 0.8px;
+}
+
+#msgdiv{
+    font-family: 'Roboto', sans-serif;
+    color:white;
+    margin: 0 auto;
+    position: absolute;
+	top: 40vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
+
+#btndiv{
+    margin: 0 auto;
+    position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    color: gray;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-style: none;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+div#reload {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: white;
+    margin: 0 auto;
+    position: absolute;
+	top: 90vh;
+	left: 50vw;
+	transform: translate(-50%, 0%);
+}
