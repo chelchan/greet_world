@@ -10,8 +10,9 @@ msg[1] = 'Forget World. How are you?';
 msg[2] = 'How do you feel?';
 msg[3] = 'Radiate that energy!'
 msg[4] = 'Breathe.'
-msg[5] = 'I got that summertime, I got that summertime summertime sadness'; //sadness
+msg[5] = 'I got that summertime, I got that summertime summertime sadness';
 msg[6] = 'Sis u good?';
+msg[100] = 'Refresh page to reload JavaScript';
 btn[0] = '<button onclick="howRU()">Greet World!</button>';
 btn[1] = '<button onclick="good()" id="good">Good!</button>';
 btn[2] = '<button onclick="idk()" id="idk">idk.</button>';
@@ -25,7 +26,6 @@ btn[9] = '<button onclick="fear(); angerG()" id="fear">Soft fear</button>';
 btn[10] = '<button onclick="jealousy(); jealousyG()" id="jealousy">Soft jealousy</button>';
 btn[11] = '<button onclick="good()" id="imGood">Nah, I' + "'" + 'm good.</button>';
 btn[100] ='';
-// btn[] = '<button onclick="" id=""></button>';
 
 function setup(){
   var canvas = createCanvas(windowWidth, windowHeight, P2D);
@@ -48,13 +48,13 @@ function setup(){
   j2 = color(233, 238, 176);
 }
 
-// RESPONSIVE GRADIENT BACKGROUND
+// INTERACTIVE GRADIENT BACKGROUND
 function draw(){
   for ( var x = 0; x < width; x += 5){
     for (var y = 0 ; y < height; y += 5){
       r = map(0, y, width, 166, 22);
       g = map(0, 0, height, 209, 62); 
-      b = map(mouseY , mouseX, width, 230, 113); 
+      b = map(mouseX, mouseY, width, 230, 113); 
       fill(r, g, b);
       noStroke(); 
       rect(x, y, 5, 5);
@@ -62,7 +62,7 @@ function draw(){
   }
 }
 
-// STOP THE RESPONSIVE BACKGROUND
+// STOP INTERACTIVE BACKGROUND
 function mousePressed(){
   noLoop();
 }
@@ -70,35 +70,30 @@ function mousePressed(){
 // GREET WORLD!
 function firstPage(){
   document.getElementById("btndiv").innerHTML = btn[0];
+  document.getElementById("reload").innerText = msg[100];
 }
 
 firstPage();
 
-
 // FORGET WORLD. HOW ARE YOU?
 function howRU(){
   document.getElementById("msgdiv").innerText = msg[1];
-  document.getElementById("btndiv").innerHTML = btn[1] + btn[2]
+  document.getElementById("btndiv").innerHTML = btn[1] + btn[2];
+  document.getElementById("reload").innerText = msg[100];
 }
 
 // GOOD! OPTION
 function good(){
   document.getElementById("msgdiv").innerHTML = msg[2];
   document.getElementById("btndiv").innerHTML = btn[3] + btn[4] + btn[5] + btn[6];
+  document.getElementById("reload").innerText = msg[100];
 }
 
 // HAPPINESS OPTION
 function happy(){
   document.getElementById("msgdiv").innerHTML = msg[3];
   document.getElementById("btndiv").innerHTML = btn[100];
-  // document.getElementById("btndiv").innerHTML = btn[3] + btn[4] + btn[5] + btn[6];
-  // document.getElementById("btndiv").style.visibility = "hidden";
-  // if(document.getElementById("sHappy").clicked){
-  // sHappyG(0, 0, width, height, sh1, sh2, Y_AXIS);
-  // console.log('It works');
-  // }
-  // mHappyG(0, 0, width, height, mh1, mh2, Y_AXIS);
-  // iHappyG(0, 0, width, height, ih1, ih2, Y_AXIS);
+  document.getElementById("reload").innerText = msg[100];
 }
 
 // SOFT HAPPINESS GRADIENT BACKGROUND
@@ -114,7 +109,6 @@ function sHappyG(){
         line(x, i, x + w, i);
       }
     }
-    console.log('It works');
   }
 }
 
@@ -131,7 +125,6 @@ function mHappyG(){
         line(x, i, x + w, i);
       }
     }
-    console.log('It works');
   }
 }
 
@@ -148,7 +141,6 @@ function iHappyG(){
         line(x, i, x + w, i);
       }
     }
-    console.log('It works');
   }
 }
 
@@ -156,24 +148,28 @@ function iHappyG(){
 function idk(){
   document.getElementById("msgdiv").innerHTML = msg[2];
   document.getElementById("btndiv").innerHTML = btn[7] + btn[8] + btn[9] + btn[10] + btn[11];
+  document.getElementById("reload").innerText = msg[100];
 }
 
 // SOFT ANGER OPTION
 function anger(){
   document.getElementById("msgdiv").innerHTML = msg[4];
   document.getElementById("btndiv").innerHTML = btn[100];
+  document.getElementById("reload").innerText = msg[100];
 }
 
 // SOFT SADNESS OPTION
 function sadness(){
   document.getElementById("msgdiv").innerHTML = msg[5];
   document.getElementById("btndiv").innerHTML = btn[100];
+  document.getElementById("reload").innerText = msg[100];
 }
 
 // SOFT FEAR OPTION
 function fear(){
   document.getElementById("msgdiv").innerHTML = msg[4];
   document.getElementById("btndiv").innerHTML = btn[100];
+  document.getElementById("reload").innerText = msg[100];
   loop();
 }
 
@@ -181,9 +177,8 @@ function fear(){
 function jealousy(){
   document.getElementById("msgdiv").innerHTML = msg[6];
   document.getElementById("btndiv").innerHTML = btn[100];
+  document.getElementById("reload").innerText = msg[100];
 }
-
-
 
 // SOFT ANGER & SOFT FEAR GRADIENT BACKGROUND
 function angerG(){
@@ -198,7 +193,6 @@ function angerG(){
         line(x, i, x + w, i);
       }
     }
-    console.log('It works');
   }
 }
 
@@ -215,7 +209,6 @@ function sadnessG(){
         line(x, i, x + w, i);
       }
     }
-    console.log('It works');
   }
 }
 
@@ -232,7 +225,6 @@ function jealousyG(){
         line(x, i, x + w, i);
       }
     }
-    console.log('It works');
   }
 }
 
