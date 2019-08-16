@@ -10,7 +10,7 @@ msg[1] = 'Forget World. How are you?';
 msg[2] = 'How do you feel?';
 msg[3] = 'Radiate that energy!'
 msg[4] = 'Breathe.'
-msg[5] = 'I got that summertime, I got that summertime summertime sadness';
+msg[5] = 'I got that summertime, summertime sadness';
 msg[6] = 'Sis u good?';
 msg[100] = 'Refresh page to reload JavaScript';
 btn[0] = '<button onclick="howRU()">Greet World!</button>';
